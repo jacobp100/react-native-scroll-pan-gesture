@@ -15,9 +15,9 @@ declare module "react-native-scroll-pan-gesture" {
     maxDownwardsDisplacement?: number;
     disableGestureWhenMomentumScrolling?: boolean;
     cancelGestureWhenAfterScrollBarToTop?: boolean;
-    onGestureStart: () => void;
-    onGesture: (event: ScrollPanGestureEvent) => void;
-    onGestureEnd: (event: ScrollPanGestureEvent) => void;
+    onGestureStart?: () => void;
+    onGesture?: (event: ScrollPanGestureEvent) => void;
+    onGestureEnd?: (event: ScrollPanGestureEvent) => void;
     children: any;
   };
 
