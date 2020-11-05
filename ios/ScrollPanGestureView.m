@@ -102,9 +102,11 @@
 
   if (_disableGestureWhenMomentumScrolling) {
     if (recognizer.state == UIGestureRecognizerStateBegan) {
+      CGFloat bottomContentOffsetY =
+        MAX(_scrollview.contentSize.height - _scrollview.frame.size.height, 0);
       BOOL scrollViewIsOverScrolling =
         offsetY < hackTopOffset ||
-        offsetY > (_scrollview.contentSize.height - _scrollview.frame.size.height);
+        offsetY > bottomContentOffsetY;
 
       _wasMomentumScrolling =
         (_scrollview.isDecelerating || scrollViewIsOverScrolling);
