@@ -1,12 +1,11 @@
 {
   "name": "react-native-scroll-pan-gesture",
   "title": "React Native Scroll Pan Gesture",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "TODO",
   "main": "index.js",
   "files": [
     "README.md",
-    "android",
     "index.js",
     "ios",
     "react-native-scroll-pan-gesture.podspec",
