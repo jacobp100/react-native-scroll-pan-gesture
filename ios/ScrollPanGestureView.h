@@ -6,6 +6,7 @@
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, assign) CGFloat maxUpwardsDisplacement;
 @property (nonatomic, assign) CGFloat maxDownwardsDisplacement;
+@property (nonatomic, assign) CGFloat topOffsetTolerance;
 @property (nonatomic, assign) BOOL disableGestureWhenMomentumScrolling;
 @property (nonatomic, assign) BOOL cancelGestureAfterDraggingScrollBarToTop;
 

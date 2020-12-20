@@ -42,6 +42,13 @@ const Example = (
       const { translateY, velocityY } = e.nativeEvent;
       // Do something with translateY and/or velocityY.
     }}
+    // If your scrollviews have their translateX/translateY animated while the
+    // user has their finger down on the scrollview, the content offset can
+    // change (very) slightly during the animation. So you could have been at
+    // the top of the scroll, but the pan gesture didn't fire, because the
+    // content offset was off by a few points. Keep increasing this value until
+    // the gesture works flawlessly - but no further.
+    topOffsetTolerance={2}
     // If scrolling started when momentum scrolling was already in progress,
     // disable the pan gesture.
     //

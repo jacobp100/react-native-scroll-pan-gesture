@@ -39,6 +39,7 @@
     _enabled = YES;
     _maxUpwardsDisplacement = 0;
     _maxDownwardsDisplacement = 0;
+    _topOffsetTolerance = 0;
     _disableGestureWhenMomentumScrolling = YES;
     _cancelGestureAfterDraggingScrollBarToTop = YES;
   }
@@ -94,8 +95,6 @@
     return;
   }
 
-  CGFloat hackTopOffset = -2;
-
   CGFloat offsetY = _scrollview.contentOffset.y;
   BOOL downwardsGestureEnabled = _maxDownwardsDisplacement > 0;
   BOOL upwardsGestureEnabled = _maxUpwardsDisplacement > 0;
@@ -105,7 +104,7 @@
       CGFloat bottomContentOffsetY =
         MAX(_scrollview.contentSize.height - _scrollview.frame.size.height, 0);
       BOOL scrollViewIsOverScrolling =
-        offsetY < hackTopOffset ||
+        offsetY < -_topOffsetTolerance ||
         offsetY > bottomContentOffsetY;
 
       _wasMomentumScrolling =
